@@ -21,10 +21,10 @@
     <div>
         <ul id="navbar"> 
             
-            <li><a class="active" href="/pages/home.html">Inicio</a></li>
+            <li><a class="active" href="/pages/index.html">Inicio</a></li>
             <li><a href="/pages/agenda.html">Agenda</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="contatos.html">Contato</a></li>
+            <li><a href="/pages/sobre.html">Sobre</a></li>
+            <li><a href="/pages/contatos.html">Contato</a></li>
             <div class="box">
                 <input type="search" placeholder="Pesquisar">
             </div>
@@ -41,7 +41,7 @@
                 <img src="/img/membros/1.png" alt="">
             </div>
             <div class="info_membro">
-                <h4>Adrina dos Santos</h4>
+                <h4>Adriana dos Santos</h4>
                 <p>Diretora</p>
             </div>
             <div class="portifólio">
@@ -115,8 +115,20 @@
                 <img src="/img/membros/roberto.png" alt="">
             </div>
             <div class="info_membro">
-                <h4>Valdir Rober</h4>
+                <h4>Valdir Roberto</h4>
                 <p>Coofundador</p>
+            </div>
+            <div class="portifólio">
+                <a href="portifólio1"></a>
+            </div>
+        </div>
+                <div class="membro_time">
+            <div class="image_time">
+                <img src="/img/membros/" alt="">
+            </div>
+            <div class="info_membro">
+                <h4>Juliane Corrêa</h4>
+                <p>Professora Ed.Física</p>
             </div>
             <div class="portifólio">
                 <a href="portifólio1"></a>
@@ -124,5 +136,94 @@
         </div>
     </div>
 </div>
+
+<!-- Modal -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+            <img id="modal-image" src="" alt="Imagem do membro">
+        </div>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+    </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script carregado!");
+
+    const modal = document.getElementById("modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDescription = document.getElementById("modal-description");
+    const modalImage = document.getElementById("modal-image");
+    const closeModal = document.querySelector(".close");
+
+    const portfolioData = {
+        "Adriana dos Santos": {
+            descricao: "Diretora com experiência em gestão educacional.",
+            imagem: "/img/membros/1.png"
+        },
+        "Nataliene Fick": {
+            descricao: "Administradora especializada em organização e planejamento.<br><strong>Curso:</strong> Graduação Administração - UFSC",
+            imagem: "/img/membros/4.png"
+        },
+        "Renan Franco": {
+            descricao: "Administrador com foco em inovação e tecnologia.",
+            imagem: "/img/membros/5.png"
+        },
+        "Natiane Fick": {
+            descricao: "Coordenadora responsável por projetos sociais.",
+            imagem: "/img/membros/3.png"
+        },
+        "Natan Fick": {
+            descricao: "Recreador com experiência em atividades infantis.",
+            imagem: "/img/membros/6.png"
+        },
+        "Leonardo Oliveira": {
+            descricao: "Recreador apaixonado por esportes e lazer.",
+            imagem: "/img/membros/2.png"
+        },
+        "Valdir RobertO": {
+            descricao: "Coofundador, visionário na criação da empresa.",
+            imagem: "/img/membros/roberto.png"
+        }
+    };
+
+    document.querySelectorAll(".membro_time").forEach((membro) => {
+        console.log("Membro encontrado:", membro);
+        membro.addEventListener("click", function () {
+            const nome = this.querySelector("h4").innerText;
+            console.log("Membro clicado:", nome);
+
+            if (portfolioData[nome]) {
+                modalTitle.innerText = nome;
+                modalDescription.innerHTML = portfolioData[nome].descricao; // Permite HTML no texto
+                modalImage.src = portfolioData[nome].imagem;
+            } else {
+                modalTitle.innerText = "Informação Indisponível";
+                modalDescription.innerText = "Sem detalhes disponíveis.";
+                modalImage.src = "";
+            }
+
+            modal.style.display = "flex";
+        });
+    });
+
+    closeModal.addEventListener("click", function () {
+        modal.style.display = "none";
+    });
+
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+});
+
+
+
+</script>
 
 </body>

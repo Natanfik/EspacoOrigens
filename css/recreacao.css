@@ -1,0 +1,115 @@
+.recreacao {
+    display: flex;
+    flex-direction: column; /* Organiza os blocos verticalmente */
+    gap: 100px; /* Espaço entre os blocos */
+    align-items: center; /* Centraliza os itens na horizontal */
+    margin-top: 50px;
+    position: relative;
+    right: 15%;
+}
+
+.item {
+    position: relative; /* Garante que cada item seja o contêiner para a sobreposição */
+    width: 400px; /* Largura padrão */
+    height: 200px; /* Altura padrão */
+    display: flex;
+    flex-direction: row;
+}
+
+.item.invertido .roteiro {
+    order: -3; /* Muda a ordem dos elementos */
+}
+
+.image img {
+    width: 100%; /* Ajusta à largura do contêiner pai (.item) */
+    height: 100%; /* Ajusta à altura do contêiner pai */
+    object-fit: cover; /* Evita distorção */
+    border-radius: 8px; /* Bordas arredondadas (opcional) */
+    z-index: 1; /* Mantém a imagem acima da div roteiro */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.roteiro {
+    width: 100%; /* Ocupa a mesma largura do item */
+    height: 100%; /* Ocupa a mesma altura do item */
+    position: absolute; /* Sobrepõe à imagem */
+    top: 60px; /* Desloca um pouco para criar o efeito */
+    left: 360px; /* Desloca um pouco para criar o efeito */
+    border-radius: 8px;
+    background-color: rgb(255, 228, 152);
+    color: #fff; /* Cor do texto */
+    font-weight: bold;
+    display: flex;
+    align-items: center; /* Centraliza o texto verticalmente */
+    justify-content: center; /* Centraliza o texto horizontalmente */
+    z-index: 0; /* Mantém a div atrás da imagem */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Adiciona um leve efeito de sombra */
+}
+.roteiro p {
+    width:80%;
+}
+/* Media Queries para diferentes tamanhos de tela */
+
+/* Para telas maiores que 1920px */
+@media (min-width: 1920px) {
+    .recreacao{
+        gap: 100px;
+    }
+    .item {
+        width: 600px; /* Ajuste a largura */
+        height: 300px; /* Ajuste a altura */
+    }
+    .roteiro {
+        top: 80px; 
+        left: 520px;
+    }
+}
+
+/* Para telas menores ou iguais a 1024px */
+@media (max-width: 1024px) {
+    .item {
+        width: 70%; /* Reduz a largura proporcionalmente */
+        height: 250px; /* Ajusta a altura */
+    }
+    .roteiro {
+        top: 50px;
+        left: 280px; /* Ajusta o deslocamento da div */
+    }
+}
+
+/* Para telas menores ou iguais a 768px */
+@media (max-width: 768px) {
+    .item {
+        flex-direction: column; /* Alinha imagem e roteiro verticalmente */
+        width: 90%; /* Reduz ainda mais a largura */
+        height: auto; /* Permite altura variável */
+    }
+    .roteiro {
+        position: static; /* Remove a sobreposição */
+        width: 100%; /* Ocupa toda a largura do item */
+        height: auto; /* Ajusta a altura automaticamente */
+        margin-top: 20px; /* Espaço entre imagem e roteiro */
+        text-align: center; /* Centraliza o texto */
+    }
+    .image img {
+        position: static; /* Remove posicionamento absoluto */
+    }
+}
+
+/* Para telas menores ou iguais a 400px */
+@media (max-width: 400px) {
+    .item {
+        flex-direction: column; /* Mantém a organização vertical */
+        width: 100%; /* Usa toda a largura da tela */
+        height: auto;
+    }
+    .roteiro {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        padding: 10px; /* Adiciona um pouco de espaçamento interno */
+    }
+    .image img {
+        border-radius: 5px; /* Bordas menores */
+    }
+}

@@ -532,3 +532,31 @@
     padding: 20px;
   }
 }
+/* Feriados - Fundo Vermelho */
+.calendar .days .holiday {
+  background-color: red;
+  color: white;
+}
+
+/* Eventos - Fundo Azul */
+.calendar .days .event:not(.today) {
+  background-color: blue;
+  color: white;
+}
+
+/* Dia Atual - Fundo Verde (já existe, mas mantemos para consistência) */
+.calendar .days .today {
+  background-color: green;
+  color: white;
+}
+/* Feriados - Fundo Vermelho */
+.calendar .days .holiday {
+  background-color: red;
+  color: white;
+}
+
+/* Eventos - Fundo Azul */
+.calendar .days .event-day {
+  background-color: blue;
+  color: white;
+}

@@ -1,18 +1,23 @@
-.footer{
-    top: 390%;
-    z-index: 1;
-    width: 100%;
-    background-color: #5e7e46;;
-    padding: 3px;
-    text-align: center;
-    align-items: center;
-    position:absolute;
-    padding: 15px;
+/* Estilo básico do footer */
+.footer {
+    background-color: #6e8646; /* Fundo verde */
+    color: #ffff; /* Texto branco */
+    text-align: center; /* Texto centralizado */
+    padding: 20px 10px; /* Espaçamento interno */
+    font-family: 'Poppins', sans-serif; /* Tipografia */
+    font-size: 14px; /* Tamanho do texto */
+    position: relative; /* Posição relativa */
+    width: 100%; /* Ocupa toda a largura */
+    margin-top:100%; /* Fica no rodapé */
 }
 
-.footer span{
-    color: #fff;
-    font-size: 0.8em;
-    font-weight: 500;
-    text-align: center;
+/* Força o footer a ficar no rodapé */
+html, body {
+    height: 100%; /* Certifique-se de que o HTML e o Body ocupem 100% da altura */
+    margin: 0; /* Remove margens padrão */
+    display: flex;
+    flex-direction: column;
 }
+
+/* O conteúdo principal deve ocupar o espaço necessário */
+
