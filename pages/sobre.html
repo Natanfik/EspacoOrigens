@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (portfolioData[nome]) {
                 modalTitle.innerText = nome;
                 modalDescription.innerHTML = portfolioData[nome].descricao; // Permite HTML no texto
-                modalImage.src = portfolioData[nome].imagem;
+                modalImage.src = portfolioData[nome].imagem or modalImage.src = "";
             } else {
                 modalTitle.innerText = "Informação Indisponível";
                 modalDescription.innerText = "Sem detalhes disponíveis.";
