@@ -303,28 +303,29 @@ addEventSubmit.addEventListener("click", () => {
   addEventTitle.value = "";
   addEventFrom.value = "";
   addEventTo.value = "";
-
+  
   saveEvents();
   updateEvents(activeDay);
 
   let eventClass = "event";
-if (event.title.toLowerCase() === "evento") {
+  if (event.title.toLowerCase() === "evento") {
   eventClass += " event-blue";
-}
-
-events += `
-  <div class="${eventClass}">
-    <div class="title">
-      <i class="fas fa-circle"></i>
-      <h3 class="event-title">${event.title}</h3>
-    </div>
-    <div class="event-time">
-      <span class="event-time">${event.time}</span>
-    </div>
-  </div>`;
-});
+  }
+  
+  events += `
+    <div class="${eventClass}">
+      <div class="title">
+        <i class="fas fa-circle"></i>
+        <h3 class="event-title">${event.title}</h3>
+      </div>
+      <div class="event-time">
+        <span class="event-time">${event.time}</span>
+      </div>
+    </div>`;
+  });
 
 function saveEvents() {
   localStorage.setItem("events", JSON.stringify(eventsArr));
 }
+
 
