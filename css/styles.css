@@ -1,7 +1,7 @@
 /* Reset e Configurações Gerais */
 * {
-    margin: 0;
-    padding: 0;
+    margin: 10;
+    padding: 10;
     box-sizing: border-box;
     font-family: 'Spartan', sans-serif;
 }
@@ -89,4 +89,5 @@ body {
     background-color: rgba(253, 246, 246, 0.01);
     border: none;
     outline: none;
+
 }
