@@ -10,7 +10,6 @@
   position: relative;
   width: 1200px;
   min-height: 650px;
-  margin: 0 auto;
   padding: 5px;
   color: #fff;
   display: flex;
@@ -567,4 +566,5 @@
   background-color: blue;
   color: white;
 }
+
 
