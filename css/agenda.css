@@ -1,3 +1,10 @@
+/* Reset e Configurações Gerais */
+* {
+    margin: 40px;
+    padding: 40px;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
 
 .container {
   position: relative;
@@ -560,3 +567,4 @@
   background-color: blue;
   color: white;
 }
+
